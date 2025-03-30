@@ -6,7 +6,7 @@ class SpeechToText {
         this.isRecording = false;
         this.finalTranscript = ""; // משתנה לשמירת טקסט סופי
         this.initSpeechRecognition();
-    }
+    } 
 
     initSpeechRecognition() {
         if ("webkitSpeechRecognition" in window || "SpeechRecognition" in window) {
