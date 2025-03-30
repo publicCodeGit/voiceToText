@@ -1,0 +1,45 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 20px;
+}
+
+input.speech-to-text-input {
+    width: 80%;
+    height: 40px;
+    font-size: 18px;
+    margin: 10px;
+    text-align: right;
+    direction: rtl;
+}
+
+.microphone-btn {
+    font-size: 15px; /* הקטנת האיקון */
+    color: black; /* תמיד שחור */
+    cursor: pointer;
+    margin-left: 4px; /* מרווח של 10 פיקסלים מצד שמאל */
+    margin-right: 4px; /* מרווח של 10 פיקסלים מצד ימין */
+    padding: 5px; /* מרווח של 5 פיקסלים מהצדדים */
+    border-radius: 50%; /* עיגול מסביב לאיקון */
+    transition: transform 0.3s ease, color 0.3s ease; /* מעברים חלקים */
+    background-color: transparent; /* הסרת הרקע */
+}
+
+.microphone-btn:hover {
+    transform: scale(1.1); /* הגדלה קלה של האיקון בזמן הובר */
+}
+
+.microphone-btn.recording {
+    color: rgb(221, 0, 0); /* צבע כחול לאיקון במהלך ההקלטה */
+}
+
+input.speech-to-text-input:disabled {
+    background-color: #f0f0f0; /* צבע רקע כששדה הקלט מנותק */
+}
+
+.input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
