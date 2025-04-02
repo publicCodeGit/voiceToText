@@ -1,4 +1,4 @@
-class SpeechToText {
+export class SpeechToText {
     constructor(inputElement, micIcon) {
         this.inputElement = inputElement;
         this.micIcon = micIcon;
@@ -76,6 +76,18 @@ class SpeechToText {
         element.style.height = "5px";
         element.style.height = (element.scrollHeight) + "px";
     }
+
+    // פונקציה לטעינת SpeechToText מחדש
+    reloadSpeechToText() {
+        const micIcons = document.querySelectorAll('.microphone-btn');
+        micIcons.forEach((micIcon) => {
+            const inputId = micIcon.getAttribute("data-input-id");
+            const inputElement = document.getElementById(inputId);
+            if (inputElement) {
+                new SpeechToText(inputElement, micIcon);
+            }
+        });
+    }
 }
 
 // יצירת אובייקטים עבור כל שדה טקסט עם אייקון המיקרופון
@@ -90,3 +102,26 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+// ייצוא הפונקציה כך שנוכל לקרוא לה מתוך קוד חיצוני
+export function initializeSpeechToText() {
+    const micIcons = document.querySelectorAll('.microphone-btn');
+    micIcons.forEach((micIcon) => {
+        const inputId = micIcon.getAttribute("data-input-id");
+        const inputElement = document.getElementById(inputId);
+        if (inputElement) {
+            new SpeechToText(inputElement, micIcon);
+        }
+    });
+}
+
+export function reloadSpeechToText() {
+    const micIcons = document.querySelectorAll('.microphone-btn');
+    micIcons.forEach((micIcon) => {
+        const inputId = micIcon.getAttribute("data-input-id");
+        const inputElement = document.getElementById(inputId);
+        if (inputElement) {
+            new SpeechToText(inputElement, micIcon);
+        }
+    });
+}
