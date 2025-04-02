@@ -1,4 +1,4 @@
-export class SpeechToText {
+class SpeechToText {
     constructor(inputElement, micIcon) {
         this.inputElement = inputElement;
         this.micIcon = micIcon;
@@ -104,7 +104,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // ייצוא הפונקציה כך שנוכל לקרוא לה מתוך קוד חיצוני
-export function initializeSpeechToText() {
+window.reloadSpeechToText = function() {
     const micIcons = document.querySelectorAll('.microphone-btn');
     micIcons.forEach((micIcon) => {
         const inputId = micIcon.getAttribute("data-input-id");
@@ -113,15 +113,4 @@ export function initializeSpeechToText() {
             new SpeechToText(inputElement, micIcon);
         }
     });
-}
-
-export function reloadSpeechToText() {
-    const micIcons = document.querySelectorAll('.microphone-btn');
-    micIcons.forEach((micIcon) => {
-        const inputId = micIcon.getAttribute("data-input-id");
-        const inputElement = document.getElementById(inputId);
-        if (inputElement) {
-            new SpeechToText(inputElement, micIcon);
-        }
-    });
-}
+};
