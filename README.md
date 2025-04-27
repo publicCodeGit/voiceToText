@@ -23,5 +23,5 @@
 יש להשתמש במבנה הבא עבור שדה הקלט:
 
 ```html
-<label id="KMainComplaintFldcaption" class="control-label" for="KMainComplaintFld">תלונה עיקרית <i data-input-id="KMainComplaintFld" class="fas fa-microphone microphone-btn"></i></label>
-<textarea id="KMainComplaintFld" oninput="auto_grow(this)" name="KMainComplaintFld" class="form-control" rows="2" maxlength="3000"></textarea>
+<label id="mainTextLabel" class="control-label" for="mainText">טקסט + הקלטה <i data-input-id="mainText" class="fas fa-microphone microphone-btn"></i></label>
+<textarea id="mainText" oninput="auto_grow(this)" name="mainText" class="form-control" rows="2" maxlength="3000"></textarea>
